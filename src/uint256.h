@@ -354,6 +354,17 @@ public:
         return pn[2*n] | (uint64)pn[2*n+1] << 32;
     }
 
+    double getdouble() const
+    {
+        double ret = 0.0;
+        double fact = 1.0;
+        for (int i = 0; i < WIDTH; i++) {
+            ret += fact * pn[i];
+            fact *= 4294967296.0;
+        }
+        return ret;
+    }
+
 //    unsigned int GetSerializeSize(int nType=0, int nVersion=PROTOCOL_VERSION) const
     unsigned int GetSerializeSize(int nType, int nVersion) const
     {
