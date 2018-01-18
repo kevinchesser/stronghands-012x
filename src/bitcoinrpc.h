@@ -55,6 +55,6 @@ public:
 
 extern const CRPCTable tableRPC;
 extern CReserveKey* pMiningKey;
-extern json_spirit::Value ValueFromCBigNumAmount(CBigNum amount);
+extern json_spirit::Value ValueFromAmount(uint64_t amount);
 
 #endif
